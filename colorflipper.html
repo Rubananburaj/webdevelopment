@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Background Color: <span class="color">#f1f5f8</span></h1>
+        <button id="btn">Flip Color</button>
+    </div>
+    <script >
+
+          let btn= document.getElementById('btn');
+          let co= document.querySelector(".color");
+     
+          btn.addEventListener('click',colorchange)
+
+               function colorchange()
+                    {
+                         let newcolor=chcolor()
+                         document.body.style.backgroundColor=newcolor
+                         co.textContent=newcolor
+                         
+                    }
+          
+
+          function chcolor()
+                    {
+                         let indices='0123456789ABCDEF'
+                         let c='#'
+                         for(let i=0;i<6;i++)
+                              {
+                                    c+=indices[Math.floor(Math.random()*16)]
+                              }
+                              return c
+                    }
+    </script>
+</body>
+</html>
